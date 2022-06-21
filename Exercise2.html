@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<p id="demo"></p>
+		<p id="demo1"></p>
+
+		<script>
+			//two string change into array
+			a = "I love javascript";
+			const aa = a.split(" ");
+			b = "I dont love football";
+			const bb = b.split(" ");
+			//result push empty array
+			const unique = [];
+			const common = [];
+
+			asplit = a.split(" ");
+			bsplit = b.split(" ");
+
+			function run() {
+				for (i = 0; i < asplit.length; i++) {
+					for (j = 0; j < bsplit.length; j++) {
+						if (asplit[i] == bsplit[j]) {
+							common.push(bsplit[j]);
+						} else {
+							null;
+						}
+					}
+				}
+
+				x = bsplit.filter((x) => asplit.indexOf(x) === -1); ///  bsplit ma bako tara, asplit ma na bhako haru lai filter garxa
+				y = asplit.filter((x) => bsplit.indexOf(x) === -1); ///
+				//asplit ma bhako tara , bsplit ma na bhako
+
+				unique.push(x, y);
+			}
+			run();
+			document.getElementById("demo").innerHTML = "Common Words: " + common;
+
+			document.getElementById("demo1").innerHTML = "Unique Words : " + unique;
+
+			console.log(common);
+			console.log(unique);
+		</script>
+	</body>
+</html>
